@@ -17,11 +17,18 @@ if auth.is_login():
 else:
     login_view()
 
-app.native.window_args['resizable'] = True
-app.native.start_args['debug'] = False
 
-if datetime.now().hour > 20 or datetime.now().hour < 6:
-    ui.dark_mode().enable()
+if __name__ in {"__main__", "__mp_main__"}:
+    import sys
 
-ui.run(native=True, window_size=(1280, 720), fullscreen=False, title="F4 |", favicon="🚀")
+    sys.stdout = open('logs.txt', 'w')
+    from logger import get_logger
+    app.native
+    app.native.window_args['resizable'] = True
+    app.native.start_args['debug'] = False
 
+    if datetime.now().hour > 20 or datetime.now().hour < 6:
+        ui.dark_mode().enable()
+
+    ui.run(native=True, window_size=(1280, 720), fullscreen=False, title="F4 | SmartHome",reload=True)
+    # ui.run()
