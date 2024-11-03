@@ -1,9 +1,8 @@
 # Smart Home Management Desktop Application
 
-
-<strong color="red">
+<font color="red">
 note the project was stopped because services started using websocket structure and this type of special interface was not prioritized
-</strong>
+</font>
 
 ![base tool](.preview/base_tool.jpg)
 
